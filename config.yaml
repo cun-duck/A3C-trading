@@ -1,0 +1,40 @@
+api_key: "your_twelvedata_api_key_here"
+
+# Konfigurasi untuk A3C (Asynchronous Advantage Actor-Critic)
+a3c:
+  num_workers: 4              # Jumlah worker untuk A3C
+  gamma: 0.99                 # Diskon untuk reward di masa depan
+  tau: 0.95                   # Untuk target update di A3C
+  learning_rate: 1e-4         # Learning rate untuk optimizer
+  entropy_beta: 0.01         # Entropy regularization parameter
+
+# Konfigurasi untuk lingkungan Gym-anytrading
+gym_env:
+  stock_symbol: "AAPL"        # Simbol saham yang digunakan untuk simulasi
+  start_date: "2020-01-01"    # Tanggal mulai untuk data sejarah
+  end_date: "2022-01-01"      # Tanggal akhir untuk data sejarah
+  window_size: 50             # Ukuran window untuk data historis yang digunakan dalam lingkungan
+  time_step: 1                # Interval waktu per langkah simulasi (misalnya, 1 menit, 5 menit, dll.)
+
+# Konfigurasi untuk visualisasi
+visualization:
+  plot_stock_data: true      # Jika true, tampilkan grafik harga saham
+  plot_model_performance: true # Jika true, tampilkan grafik performa model A3C
+  plot_trade_signals: true   # Jika true, tampilkan sinyal beli/jual pada grafik harga saham
+  show_backtest_results: true # Tampilkan hasil backtesting pada grafik
+
+# Parameter backtesting
+backtest:
+  initial_balance: 100000     # Saldo awal untuk backtesting
+  transaction_fee: 0.001     # Biaya transaksi dalam backtesting
+  risk_management:
+    stop_loss_percentage: 0.05  # Persentase kerugian maksimum sebelum menghentikan transaksi
+    take_profit_percentage: 0.10 # Persentase keuntungan yang ditargetkan untuk setiap transaksi
+
+# Konfigurasi Streamlit
+streamlit:
+  app_title: "Reinforcement Learning Trading with A3C"  # Judul aplikasi
+  display_stock_chart: true   # Jika true, tampilkan grafik harga saham di aplikasi
+  display_trading_performance: true # Jika true, tampilkan performa trading model
+  display_user_controls: true   # Jika true, tampilkan kontrol bagi pengguna untuk memilih simbol saham
+  display_metrics: true        # Jika true, tampilkan metrik performa model seperti Sharpe Ratio, dll.
