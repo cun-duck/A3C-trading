@@ -8,7 +8,7 @@ from utils.evaluation import sharpe_ratio, total_return
 
 st.title("Reinforcement Learning for Trading - A3C")
 
-api_key = st.text_input('Enter your Twelve Data API Key:')
+api_key = st.text_input('94d88ac89a694d5bbbc92f49245c19a8')
 symbol = st.text_input('Enter Stock Symbol:', 'AAPL')
 
 if api_key:
