@@ -9,3 +9,8 @@ streamlit
 scikit-learn
 scipy
 yfinance
+gym
+gym-anytrading
+torch==1.12.1
+pandas==1.5.3
+requests==2.28.1
