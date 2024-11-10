@@ -1,6 +1,11 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'utils')))
+
+
 import streamlit as st
 import pandas as pd
-from .utils.market_data import get_market_data
+from utils.market_data import get_market_data
 from models.a3c_model import build_a3c_model, train_a3c
 from utils.visualization import plot_performance
 from utils.backtest import backtest_strategy
